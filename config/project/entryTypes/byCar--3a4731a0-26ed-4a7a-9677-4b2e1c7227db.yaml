@@ -1,0 +1,67 @@
+color: null
+fieldLayouts:
+  244aca0d-dffb-4d70-9315-b83fef45fdfe:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-03-04T22:14:36+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 5e2b45bf-6ab9-45ce-aa32-a8517913ffcd
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-04T22:15:44+00:00'
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 83a64a46-3c80-4710-bbb6-d053b9d32bc3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c7b0dbc7-272a-4ca4-963b-f6e6ad0a1292
+        userCondition: null
+handle: byCar
+hasTitleField: true
+icon: null
+name: 'By Car'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,10 @@
+<div class="slide image {% if totalSlides == 1 %}single{% endif %}">
+	<div class="image scale">
+		{% if slide is defined and slide is not empty %}
+			{% include '_includes/_blocks/asset' with {
+				ratio: '1:1',
+				asset: slide
+			} %}
+		{% endif %}
+	</div>
+</div>

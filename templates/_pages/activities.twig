@@ -1,0 +1,18 @@
+{% extends "_layouts/base" %}
+
+{% block page %}
+	{% set slides = [] %}
+	{% set content = craft.entries.section('activities').type('activity') %}
+	{% set slides = content.all() %}
+
+	{% include '_includes/_blocks/slider' with {
+        slides: slides,
+        counter: true,
+        slideHeader: "Activites",
+        slideBody: content.description,
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slideCard',
+        newTab: true
+    } %}
+
+{% endblock %}

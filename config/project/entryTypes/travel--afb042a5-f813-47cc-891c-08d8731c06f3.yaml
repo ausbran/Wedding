@@ -1,0 +1,96 @@
+color: null
+fieldLayouts:
+  de0f9c56-d374-4935-8e35-ff5c0129e58c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-03-04T21:48:50+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c5b4f278-05d8-4313-8df2-36ca70e2b2a1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-22T04:09:18+00:00'
+            elementCondition: null
+            heading: Banner
+            type: craft\fieldlayoutelements\Heading
+            uid: 7e5faa30-390e-4dec-907e-a033dfb55164
+            userCondition: null
+          -
+            dateAdded: '2025-04-22T04:09:18+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: text
+            includeInCards: false
+            instructions: null
+            label: Text
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6a34007d-5634-496a-88e0-f7091f90ebb8
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-22T04:09:18+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 58ebcb6d-1b4f-4020-a37f-50f505e63a51 # Button
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2f9931f4-b492-4d48-9ebf-417189766037
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-22T04:09:18+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: c21a1834-83f0-426e-8881-fbb41b038ee7 # Asset
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 44dba1c0-33e0-44e5-9ead-10787822989c
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: f056d599-e49d-49bc-91a8-f4f39d269491
+        userCondition: null
+handle: travel
+hasTitleField: false
+icon: null
+name: Travel
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Travel
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

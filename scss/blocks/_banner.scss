@@ -1,0 +1,80 @@
+.banner {
+  background-color: $orange;
+  padding: $padding-large;
+  box-sizing: content-box;
+  .text {
+    max-width: 700px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: $gap-medium;
+    text-align: center;
+    * {
+      color: $tan;
+    }
+    svg {
+      max-height: 100px;
+      max-width: 90%;
+      object-fit: cover;
+      margin: auto;
+    }
+  }
+  .background {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  &.body {
+    display: flex;
+    align-items: flex-end;
+    padding: 100px 50px 50px 50px;
+    position: relative;
+    margin: 50px;
+    background-color: $tan;
+    max-width: 1430px;
+    border-radius: $box-radius;
+    overflow: hidden;
+    min-height: 400px;
+    .text {
+      margin: unset;
+      z-index: 5;
+      position: relative;
+      text-align: left;
+      * {
+        font-family: $header;
+        color: $white;
+      }
+    }
+    &.home-banner {
+      @include flex-center;
+      * {
+        text-align: center;
+        color: $orange;
+      }
+      .label {
+        color: $tan !important;
+      }
+    }
+  }
+  @include respond-to(1630px) {
+    &.body {
+      margin: 50px auto;
+    }
+  }
+  @include respond-to-max($desktop) {
+    &.text {
+      flex-direction: column;
+      gap: $gap-medium;
+      max-width: 800px;
+      margin-left: unset;
+      p {
+        padding-top: unset;
+      }
+    }
+  }
+  @include respond-to-max($mobile) {
+    padding: 45px 25px;
+  }
+}

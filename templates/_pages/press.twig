@@ -1,0 +1,80 @@
+{% extends "index" %}
+
+{% block content %}
+
+<div class="press-outer">
+    <div class="back">
+        {% include '_includes/_blocks/button' with {
+            link: '/company',
+            label: 'Back to all press',
+            firstArrow: 'red-arrow',
+            secondArrow: 'black-arrow'
+        } %}
+    </div>
+
+    <div class="text center-center margin-top-xl margin-bottom fade-in {% if entry.type == 'blog' %}blog{% endif %}" data-cascade>
+        {% set date = entry.date %}
+        {% if date %}
+            <h3>{{ date | date('Y') }}</h3>
+        {% endif %}
+        <h1>{{ entry.title }}</h1>
+        {% if entry.text %}
+            <div class="inner">
+                {{ entry.text }}
+            </div>
+        {% endif %}
+        {% if entry.type == 'website' %}
+            {% include '_includes/_blocks/button' with {
+                link: entry.websiteLink,
+                label: 'View website',
+                firstArrow: 'red-arrow',
+                secondArrow: 'black-arrow',
+                newTab: true,
+                class: 'website-link'
+            } %}
+        {% endif %}
+    </div>
+
+    {% if entry.type == 'magazine' %}
+        {% set magazineFile = entry.magazineFile.one() %}
+        {% if magazineFile %}
+            <div id="pdf-viewer" class="pdf-viewer" data-url="{{ magazineFile.url }}"></div>
+        {% endif %}
+    {% elseif entry.type == 'website' %}
+        <a href="{{ entry.websiteLink }}" target="_blank" class="website-image fade-in" data-cascade>
+            <h2>View website</h2>
+            {% for asset in entry.pressAsset %}
+                {% include '_includes/_blocks/asset' %}
+            {% endfor %}
+        </a>
+    {% elseif entry.type == 'video' %}
+        {% set video = entry.pressAsset.one() %}
+        {% if video %}
+            <video class="website-image" muted autoplay controls preload="metadata" playsinline webkit-playsinline>
+                <source src="{{ video.url }}" type="{{ video.mimeType }}">
+            </video>
+        {% endif %}
+    {% elseif entry.type == 'blog' %}
+        <!-- No additional elements for blog, only ckeditor is displayed for text, images, etc -->
+    {% endif %}
+</div>
+
+{% set press = craft.entries()
+    .section('press')
+    .id(['not', entry.id])
+    .limit(6)
+    .orderBy('RAND()')
+    .all() %}
+
+{% if press %}
+    {% include '_includes/_blocks/slider' with { 
+        slides: press, 
+        slideTemplate: '_includes/_blocks/slidePress',
+        height: 'medium',
+        visibleCards: 2,
+        slideHeader: 'More Press',
+        fadeIn: true
+    } %}
+{% endif %}
+
+{% endblock %}

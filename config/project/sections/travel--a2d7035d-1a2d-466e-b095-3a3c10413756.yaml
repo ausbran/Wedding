@@ -1,0 +1,39 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 723b82e0-b346-4e2a-987d-d642bd04fdf1 # Plane
+  -
+    uid: edaa2543-dd68-44cc-895d-1cc500606e5e # Car
+  -
+    uid: afb042a5-f813-47cc-891c-08d8731c06f3 # Travel
+  -
+    uid: 71839de8-7dd6-493f-8d7a-d7a3590400a4 # By Plane
+  -
+    uid: 3a4731a0-26ed-4a7a-9677-4b2e1c7227db # By Car
+handle: travel
+maxAuthors: 1
+name: Travel
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4be1c3c3-eeb9-45c6-ae81-243238b64098: # Wedding
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/travel
+    uriFormat: '{slug}'
+structure:
+  maxLevels: null
+  uid: 0a054a1d-f1ef-46bb-b676-e06e1d2964af
+type: structure

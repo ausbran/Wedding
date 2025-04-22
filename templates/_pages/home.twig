@@ -1,0 +1,52 @@
+{% extends "index" %}
+
+{% set bodyClass = 'orange' %}
+
+{% block content %}
+	{% if showLottie %}
+		<div class="lottie">
+			<dotlottie-player src="https://lottie.host/7e92f2c8-ab9f-49f4-9704-2851c65ded22/FHSHhneg1v.lottie" background="transparent" speed="1" autoplay></dotlottie-player>
+			<div class="background"></div>
+		</div>
+	{% endif %}
+
+	<div class="home">
+		<button id="toggle-audio">🔊</button>
+
+		<div class="artwork-container fade-in">
+
+			<div class="characters">
+				{% set characterLinks = {
+					'austin': '/schedule',
+					'julie': '/schedule',
+					'fire': '/activities',
+					'boat': '/travel',
+					'dogs': '/registry',
+					'surfers-water': '/activities',
+					'surfers-beach': '/activities',
+					'surfboards': '/registry',
+					'tent': '/accommodations',
+					'van': '/travel',
+					'women': '/accommodations',
+				} %}
+
+				{% for image, href in characterLinks %}
+					{% set svg = href|trim('/') %}
+					<a href="{{ siteUrl(href) }}" class="character-container {{ image }}">
+						<img src="{{ siteUrl('assets/art/' ~ image ~ '.png') }}" alt="{{ image }}" class="character">
+						{% if svg is not empty %}
+							<div class="svg-wrapper {{svg}}">
+								{% include '_includes/_svg/' ~ svg ~ '.svg' ignore missing %}
+							</div>
+						{% endif %}
+					</a>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	{% include '_includes/_blocks/tout' with {
+		class: 'home-banner'
+	} %}
+
+{% endblock %}

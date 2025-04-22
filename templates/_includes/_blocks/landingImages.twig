@@ -1,0 +1,30 @@
+{% extends '_includes/_blocks/landingBase' %}
+
+{% block content %}
+    {{ entry.text }}
+    <div class="buttons wrapper mobile-slider-spacer">
+        {% if entry.buttons|length %}
+            {% for button in entry.buttons.all() %}
+                {% include '_includes/_blocks/button' with {
+                    link: button.buttonLink,
+                    label: button.buttonLabel
+                } %}
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}
+
+{% block background %}
+    {% if entry.image|length %}
+        <div class="carousel gradient" data-slide-time="{{ entry.slideTime ?? 15 }}">
+            {% for asset in entry.image.all() %}
+                <div class="carousel-item">
+                    {% include '_includes/_blocks/asset' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    {% endif %}
+{% endblock %}

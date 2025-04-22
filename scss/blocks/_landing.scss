@@ -1,0 +1,122 @@
+.landing {
+  position: relative;
+  height: 100svh;
+  width: 100vw;
+  min-height: 600px;
+  @include flex-center;
+  overflow: hidden;
+  background: $white;
+  padding: 75px;
+  .inner {
+    max-width: $max-width;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    font-size: 1em;
+    z-index: 5;
+    font-size: 1em;
+    .text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+      img {
+        width: 80%;
+        max-width: 450px;
+      }
+    }
+    * {
+      color: $white;
+    }
+    p {
+      max-width: 1000px;
+    }
+    .description-wrapper,
+    .iframe-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: $gap;
+    }
+  }
+  .background,
+  .carousel {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  .carousel {
+    &.gradient:before {
+      z-index: 4;
+    }
+    .carousel-item {
+      height: inherit;
+      width: inherit;
+      position: inherit;
+      z-index: 2;
+      opacity: 0;
+      transition: $transition;
+      &.active {
+        z-index: 3;
+        opacity: 1;
+      }
+    }
+  }
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 7px;
+    background: $grey;
+    z-index: 4;
+    .progress {
+      will-change: width;
+      width: 0%;
+      height: 100%;
+      background-color: $orange;
+    }
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0;
+    z-index: 1;
+  }
+  &.project {
+    background: $white;
+  }
+  @include respond-to-max($desktop-xlarge) {
+    padding: 50px;
+  } // end 1500px
+  @include respond-to-max($mobile) {
+    padding: 45px 25px;
+    &.project {
+      padding-bottom: 25px !important;
+    }
+    &.home {
+      .buttons.wrapper {
+        margin-left: -25px;
+        overflow: scroll;
+        border-top: 1px solid $white;
+        padding-top: 15px;
+        width: calc(100% + 50px);
+        a:nth-of-type(1) {
+          padding-left: 25px;
+        }
+        .buttons {
+          padding-right: 32px;
+          a {
+            padding-left: unset;
+          }
+        }
+      }
+    }
+  } // end $mobile
+} // end landing

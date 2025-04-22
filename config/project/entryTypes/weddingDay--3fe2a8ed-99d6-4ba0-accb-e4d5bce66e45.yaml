@@ -1,0 +1,147 @@
+color: null
+fieldLayouts:
+  a9f5aa90-65c5-405c-b475-e6ea3702bd36:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-03-03T22:14:34+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: e0ed2e74-1356-4661-ace8-e129c2a0383a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:16:14+00:00'
+            elementCondition: null
+            fieldUid: 3ce8f18a-c45c-461a-8ce2-a066abb324be # Date
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ccaea6a0-14ff-4270-aa38-1321525de325
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-04T18:28:31+00:00'
+            elementCondition: null
+            fieldUid: 00bc33ef-75ef-4102-9833-38fa15127f72 # Start Time
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2026005d-85e7-4d3c-9b5b-260cdaafe429
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-04T18:28:31+00:00'
+            elementCondition: null
+            fieldUid: 153b26c9-5add-4419-9e68-24b43ec3574a # End Time
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: de563b8c-7fb2-4f21-ac76-b3670786c0c1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:16:14+00:00'
+            elementCondition: null
+            fieldUid: 65968bc2-8227-4610-b7f5-4f757bb08b0b # Address
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2623e77e-5026-4b98-a2d5-3f4cbe0c7b82
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:16:14+00:00'
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 08bf6c11-7b30-49b8-828e-5e2a4595504b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:16:14+00:00'
+            elementCondition: null
+            fieldUid: c21a1834-83f0-426e-8881-fbb41b038ee7 # Asset
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2380bed8-fda3-4a1d-b67c-78b51bdc36a3
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e1d5bc3e-ee63-43ef-9df5-7bef11b59c3d
+        userCondition: null
+handle: weddingDay
+hasTitleField: true
+icon: null
+name: 'Wedding Day'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

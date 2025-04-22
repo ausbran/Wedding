@@ -1,0 +1,21 @@
+{% extends "_layouts/base" %}
+
+{% block page %}
+
+	{% set parent = craft.entries.section('accommodations').type('accommodations').one() %}
+
+	{% for content in parent.children.all() %}
+		{% set slides = content.children.all() %}
+		{% include '_includes/_blocks/slider' with {
+        slides: slides,
+        slideHeader: content.title,
+        slideBody: content.description,
+        fadeIn: true,
+		label: 'View More',
+        slideTemplate: '_includes/_blocks/slideCard',
+		newTab: true
+    } %}
+	{% endfor %}
+
+
+{% endblock %}

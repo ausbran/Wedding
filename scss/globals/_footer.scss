@@ -1,0 +1,78 @@
+footer {
+  margin: auto;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: $gap-large;
+  max-width: $max-width;
+  background: $white;
+  color: $black;
+  height: 240px;
+  padding: $padding;
+  border-radius: $box-radius;
+  overflow: hidden;
+  box-sizing: content-box;
+  .logo {
+    height: 100%;
+    a, img, svg {
+      height: inherit;
+    }
+    a {
+      transition: $transition-medium;
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+  .footer-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: $gap-large; 
+    a {
+      transition: $transition;
+      &:hover {
+        opacity: .6;
+      }
+    }
+  }
+  .social-link {
+    height: 23px;
+    width: 23px;
+    display: inline-block;
+    svg {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  @include respond-to-max($desktop-xlarge) {
+    padding: 50px;
+  }
+  @include respond-to-max($desktop) {
+    height: 160px;
+    .footer-links {
+      align-items: flex-start;
+      gap: 15px;
+      justify-content: flex-end;
+      flex-direction: column;
+      height: 100%;
+      text-align: left;
+    }
+    .social-link {
+      order: -1;
+    }
+  }
+  @include respond-to-max($tablet) {
+    align-items: flex-start;
+    flex-direction: column;
+    height: unset;
+    .logo {
+      height: 150px;
+    }
+  }
+  @include respond-to-max($mobile) {
+    padding: 75px 25px 25px 25px;
+  }
+}

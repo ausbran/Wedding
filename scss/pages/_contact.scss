@@ -1,0 +1,98 @@
+// styles temporary for teton valley office
+.contact .text .coming-soon {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75em;
+  border: 1.5px solid #fff;
+  display: inline;
+  width: fit-content;
+  padding: 11px 15px;
+  border-radius: $btn-radius;
+}
+// .contact .teton-valley img {
+//     filter: blur(20px) grayscale(1) !important;
+//     @include transform(
+//         scale(1.12)
+//     );
+// }
+// .contact .teton-valley img:hover,
+// .contact .text:hover ~ .bw.teton-valley img {
+//     @include transform(
+//         scale(1.14), !important
+//     );
+// }
+.contact {
+  cursor: pointer;
+  .text {
+    max-width: unset;
+    gap: $gap-small;
+    div {
+      flex-direction: row;
+      gap: 8px $gap;
+      flex-wrap: wrap;
+    }
+    .btn {
+      margin-top: $margin-medium;
+    }
+  }
+  .form-wrapper {
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    background: $orange;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: $padding;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    flex-direction: column;
+    gap: $gap-large;
+    @include transform(translate3d(0, 100%, 0));
+    transition: $transition-long;
+    .fui-i,
+    .close {
+      transition: $transition-long;
+      opacity: 0;
+      @include transform(translate3d(0, 50px, 0));
+    }
+    .close {
+      transition-delay: 0.15s;
+    }
+    .fui-i {
+      width: 100%;
+      transition-delay: 0.3s;
+      .fui-heading.fui-heading-h2 {
+        max-width: 370px;
+      }
+      .fui-form {
+        width: 100%;
+      }
+      .fui-alert-success {
+        height: initial;
+        width: 100%;
+        display: block;
+        border: unset;
+        margin: unset;
+        padding: unset;
+        font-size: 3rem;
+        p {
+          max-width: 80%;
+          text-align: left;
+          font-size: 2rem;
+        }
+      }
+    }
+    &.active {
+      @include transform(translate3d(0, 0, 0));
+      .fui-i,
+      .close {
+        opacity: 1;
+        @include transform(translate3d(0, 0, 0));
+      }
+    }
+  }
+  @include respond-to-max($mobile) {
+  }
+}

@@ -1,0 +1,21 @@
+columnSuffix: null
+handle: description
+instructions: null
+name: Description
+searchable: false
+settings:
+  availableTransforms: ''
+  availableVolumes: ''
+  ckeConfig: d83a7b3a-cd36-4ae2-8a34-0140160f3f04 # Simple
+  createButtonLabel: null
+  defaultTransform: null
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+  sourceEditingGroups: '*'
+  wordLimit: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

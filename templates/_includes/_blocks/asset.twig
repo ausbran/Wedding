@@ -1,0 +1,101 @@
+{# Universal variables #}
+{% set asset = asset ?? null %}
+{% set assetMobile = assetMobile ?? null %}
+{% set format = format ?? 'webp' %}
+{% set quality = quality ?? 100 %}
+{% set mode = mode ?? 'crop' %}
+{% set overlay = overlay ?? null %}
+{% if asset and asset.height is defined and asset.width is defined %}
+	{% set isPortrait = asset.height > asset.width %}
+{% else %}
+	{% set isPortrait = false %}
+{% endif %}
+{% set orientationClass = (isPortrait and (ratio is not defined or ratio == null)) ? 'portrait' : 'landscape' %}
+
+{# Aspect ratio variables #}
+{% if isPortrait and (ratio is not defined or ratio == null) %}
+	{# Set to 9:16 for vertical images if no specific ratio is defined #}
+	{% set ratio = '9:16' %}
+	{% set width, height = 1440, 2560 %}
+	{% set tabletWidth, tabletHeight = 1080, 1920 %}
+	{% set mobileWidth, mobileHeight = 720, 1280 %}
+{% else %}
+	{# Default to 16:9 if no specific ratio or portrait orientation #}
+	{% set ratio = ratio ?? '16:9' %}
+	{% if ratio == '16:9' %}
+		{% set width, height = 2560, 1440 %}
+		{% set tabletWidth, tabletHeight = 1920, 1080 %}
+		{% set mobileWidth, mobileHeight = 1280, 720 %}
+	{% elseif ratio == '4:5' %}
+		{% set width, height = 1440, 1800 %}
+		{% set tabletWidth, tabletHeight = 1080, 1350 %}
+		{% set mobileWidth, mobileHeight = 640, 800 %}
+	{% elseif ratio == '1:1' %}
+		{% set width, height = 1440, 1440 %}
+		{% set tabletWidth, tabletHeight = 1080, 1080 %}
+		{% set mobileWidth, mobileHeight = 800, 800 %}
+	{% endif %}
+{% endif %}
+
+{# Video variables #}
+{% set loopVideo = loopVideo ?? true %}
+
+{% if asset %}
+	{% if asset.kind == 'video' %}
+		<video autoplay {{ loopVideo ? 'loop' }} muted preload="metadata" playsinline webkit-playsinline class="{{ orientationClass }}">
+			<source src="{{ asset.url }}" type="{{ asset.mimeType }}" media="(min-width: 768px)">
+			{% if assetMobile %}
+				<source src="{{ assetMobile.url }}" type="{{ assetMobile.mimeType }}" media="(max-width: 767px)">
+			{% endif %}
+		</video>
+	{% elseif asset.kind == 'image' and asset.extension != 'svg' %}
+		{# Image rendering logic #}
+		{% set settings = [
+            {
+                asset: asset,
+                transform: {
+                    width: width,
+                    height: height,
+                    mode: mode,
+                    format: format
+                },
+                min: 1024
+            },
+            {
+                asset: asset,
+                transform: {
+                    width: tabletWidth,
+                    height: tabletHeight,
+                    mode: mode,
+                    format: format
+                },
+                max: 1023,
+                min: 768
+            },
+            {
+                asset: asset,
+                transform: {
+                    width: mobileWidth,
+                    height: mobileHeight,
+                    mode: mode,
+                    format: format
+                },
+                max: 767
+            }
+        ] %}
+
+		{% set commonTransformSettings = {
+            quality: quality,
+            class: orientationClass
+        } %}
+
+		{{ craft.images.pictureMultiple(settings, commonTransformSettings) }}
+	{% elseif asset.extension == 'svg' %}
+		<img src="{{ asset.url }}" alt="{{ asset.title }}">
+	{% endif %}
+
+
+	{% if overlay %}
+		<div class="overlay" style="opacity: {{ overlay }};"></div>
+	{% endif %}
+{% endif %}

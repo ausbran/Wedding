@@ -1,0 +1,143 @@
+{% extends "index" %}
+
+{% set bodyClass = 'orange' %}
+
+{% block content %}
+	<div class="rsvp fade-in fade-in--offscreen">
+		<form id="rsvp-form" method="POST">
+			<div class="form-step intro fade-in fade-in--offscreen" data-step="1">
+
+				<h2>{{ entry.form1 }}</h2>
+				<input type="hidden" name="attending" id="attending"/>
+				<div class="buttons">
+					<button class="btn tan" type="button" data-response="yes">Yes</button>
+					<button class="btn tan" type="button" data-response="no">No</button>
+				</div>
+
+			</div>
+
+			<div class="form-step fade-in fade-in--offscreen" data-step="sorry" style="display:none">
+
+				<h2>{{ entry.formSorry }}</h2>
+				<div class="row">
+					<div class="field">
+						<label>First Name</label>
+						<input type="text" name="notAttendingfirstName" required/>
+					</div>
+					<div class="field">
+
+						<label>Last Name</label>
+						<input type="text" name="notAttendinglastName" required/>
+					</div>
+
+				</div>
+
+				<div class="buttons">
+					<button type="button" class="back btn tan">Back</button>
+					<button type="submit" class="btn tan">Submit</button>
+				</div>
+			</div>
+
+			<div class="form-step fade-in fade-in--offscreen" data-step="2" style="display:none">
+
+				<h2>{{ entry.form2 }}</h2>
+				<div class="row">
+					<div class="field">
+
+						<label>First Name</label>
+						<input type="text" name="firstName" required/>
+					</div>
+					<div class="field">
+
+						<label>Last Name</label>
+						<input type="text" name="lastName" required/>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="field">
+						<label>Email</label>
+						<input type="email" name="email" required/>
+					</div>
+					<div class="field">
+						<label>Phone</label>
+						<input type="tel" name="phone" required/>
+					</div>
+				</div>
+				<div class="add-buttons">
+					<button type="button" class="add add-adult">+ Add Adult</button>
+					<button type="button" class="add add-child">+ Add Child</button>
+				</div>
+
+				<div id="adults"></div>
+				<div id="children"></div>
+
+				<div class="buttons">
+					<button type="button" class="back btn tan">Back</button>
+					<button type="button" class="next btn tan">Next</button>
+				</div>
+			</div>
+
+
+			<div class="form-step fade-in fade-in--offscreen " data-step="3" style="display:none">
+
+				<h2>{{ entry.form3 }}</h2>
+				{% include '_includes/_blocks/eventRow.twig' with { eventType: 'pnwFunDay', name: 'pnwFunDay' } %}
+				<div id="pnw-activities" style="display:none">
+					<div class="activity-wrapper">
+						<div class="activity" data-index="1">
+							<h4>Activity #1</h4>
+							<div class="row">
+								<div class="field">
+									<label>Choose an activity:</label>
+									<select name="activity[]">
+										<option value="biking">Biking</option>
+										<option value="kayaking">Kayaking</option>
+										<option value="hiking">Hiking</option>
+									</select>
+								</div>
+								<div class="field">
+									<label>Number of people</label>
+									<div class="number-field">
+										<input type="number" name="activityCount[]" min="1"/>
+										<div class="custom-spinner">
+											<button type="button" class="spin-up"></button>
+											<button type="button" class="spin-down"></button>
+										</div>
+									</div>
+								</div>
+								<div class="field trash">
+									<button type="button" class="remove remove-activity" aria-label="Remove">
+										<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewbox="0 0 29.625 27.462">
+											<g transform="translate(-0.188 -1.269)">
+												<path id="Path_544" data-name="Path 544" d="M22.572,27.981H7.428a2.163,2.163,0,0,1-2.163-2.163V6.346H24.735V25.817a2.163,2.163,0,0,1-2.163,2.163Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+												<path id="Path_545" data-name="Path 545" d="M11.755,21.49V12.837" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+												<path id="Path_546" data-name="Path 546" d="M18.245,21.49V12.837" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+												<path id="Path_547" data-name="Path 547" d="M.938,6.346H29.063" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+												<path id="Path_548" data-name="Path 548" d="M18.245,2.019h-6.49A2.163,2.163,0,0,0,9.591,4.183V6.346H20.409V4.183a2.163,2.163,0,0,0-2.163-2.163Z" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+											</g>
+										</svg>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="add add-activity">+ Add another adventure</button>
+				</div>
+				{% include '_includes/_blocks/eventRow.twig' with { eventType: 'welcomeBeachParty', name: 'welcome' } %}
+				{% include '_includes/_blocks/eventRow.twig' with { eventType: 'weddingDay', name: 'ceremony' } %}
+				{% include '_includes/_blocks/eventRow.twig' with { eventType: 'hangoverBrunch', name: 'brunch' } %}
+
+				<div class="row event details">
+					<label for="otherDetails">Any other details we should know?</label>
+					<textarea name="otherDetails" id="otherDetails" rows="4"></textarea>
+				</div>
+
+				<div class="buttons">
+					<button class="back btn tan" type="button">Back</button>
+					<button class="btn tan" type="submit">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+{% endblock %}

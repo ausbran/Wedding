@@ -1,0 +1,94 @@
+{% extends "index" %}
+
+{% block content %}
+    {# {% include '_includes/_blocks/landingGeneral' with { blocks: team.landing.all() } %} #}
+    <div class="landing {{ entry.slug }}">
+        <div class="inner center-center">
+            <div class="text fade-in" data-cascade>
+                <dotlottie-player class="desktop" src="https://lottie.host/f5b2c52c-8dea-40c6-b02c-a25259931e81/QmFY9J8Jkd.json" background="transparent" speed="1" style="width: 100%; height: 100%" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+                <dotlottie-player class="mobile" src="https://lottie.host/3e41d573-9043-4ec7-a0e9-74b1ef7d9272/OCVsz5HH9u.json" background="transparent" speed="1" style="width: 75%; height: 100%" direction="1" playMode="normal" loop autoplay></dotlottie-player>
+                <video class="background desktop" autoplay loop muted preload="metadata" playsinline webkit-playsinline>
+                    <source src="/uploads/videos/lottie-background.mp4">
+                </video>
+                <video class="background mobile" autoplay loop muted preload="metadata" playsinline webkit-playsinline>
+                    <source src="/uploads/videos/article-video.mp4">
+                </video>
+            </div>
+        </div>
+    </div>
+
+    
+
+    {% include '_includes/_blocks/bannerText' with {
+        block: entry,
+        handle: 'text',
+        maxWidth: entry.topMaxWidth,
+        class: 'anchor'
+    } %}
+
+    {% set partners = craft.entries.section('staff').type('partner').all() %}
+    {% include '_includes/_blocks/slider' with { 
+        slides: partners, 
+        height: 'large',
+        class: "accordion",
+        slideHeader: 'Partners',
+        visibleCards: 2, 
+        slideTemplate: '_includes/_blocks/slideAccordion',
+        arrows: false,
+        fadeIn: true
+    } %}
+
+    {% set employees = craft.entries.section('staff').type('employee').all() %}
+    {# commenting out horizontal slider temporarily to replace with vertical grid #}
+    {# {% include '_includes/_blocks/slider' with { 
+        slides: employees, 
+        height: 'medium', 
+        slideHeader: 'Employees',
+        visibleCards: 3, 
+        slideTemplate: '_includes/_blocks/slideEmployee',
+        fadeIn: true
+    } %} #}
+
+    {% include '_includes/_blocks/slider' with { 
+        slides: employees, 
+        height: 'medium',
+        class: "accordion",
+        slideHeader: 'Team',
+        visibleCards: 3, 
+        slideTemplate: '_includes/_blocks/slideAccordion',
+        arrows: false,
+        fadeIn: true
+    } %}
+
+    {# {% if employees | length %}
+        <div class="employee-wrapper max-width">
+        <h3>Employees</h3>
+            {% for employee in employees %}
+            <div class="employee">
+                    <div class="image {% if height is defined %}{{ height }}{% endif %}">
+                        {% if employee.staffImage is defined %}
+                            {% set asset = employee.staffImage.one() %}
+                            {% if asset %}
+                                {% include '_includes/_blocks/asset' with {
+                                    ratio:'4:5'
+                                } %}
+                            {% endif %}
+                        {% endif %}
+                    </div>
+                    <div class="text">
+                        <h4 class="name">{{ employee.title }}</h4>
+                        <h4 class="position">{{ employee.position }}</h4>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %} #}
+
+    {% include '_includes/_blocks/banner' with {
+        block: entry,
+        handle: 'bannerText',
+        link: entry.bannerLink,
+        label: entry.bannerLabel,
+        maxWidth: entry.bottomMaxWidth
+    } %}
+{% endblock %}

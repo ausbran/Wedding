@@ -1,0 +1,36 @@
+columnSuffix: null
+handle: asset
+instructions: null
+name: Asset
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - image
+    - video
+  branchLimit: null
+  defaultUploadLocationSource: 'volume:0d1f2cb1-d3dd-4f56-8fb6-1fdbb02d9d32' # General
+  defaultUploadLocationSubpath: null
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: false
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:0d1f2cb1-d3dd-4f56-8fb6-1fdbb02d9d32' # General
+  restrictedLocationSubpath: null
+  selectionLabel: null
+  showCardsInGrid: true
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

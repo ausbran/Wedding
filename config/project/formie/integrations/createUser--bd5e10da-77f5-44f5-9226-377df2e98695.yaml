@@ -1,0 +1,9 @@
+enabled: true
+handle: createUser
+name: 'Create User'
+settings:
+  activateUser: false
+  mergeUserGroups: false
+  sendActivationEmail: true
+sortOrder: 1
+type: verbb\formie\integrations\elements\User

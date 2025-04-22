@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 63ba0301-7d96-4e46-8779-42426a416119 # Navigation
+handle: navigation
+maxAuthors: 1
+name: Navigation
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - /
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4be1c3c3-eeb9-45c6-ae81-243238b64098: # Wedding
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

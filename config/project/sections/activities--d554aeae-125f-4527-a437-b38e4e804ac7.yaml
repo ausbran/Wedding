@@ -1,0 +1,33 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: a3fe5e61-bb6a-4d26-b026-4eec6d9e9c27 # Activity
+  -
+    uid: fafa8792-4263-430c-aaf7-f26498cee6e7 # Activities
+handle: activities
+maxAuthors: 1
+name: Activities
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - activities
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4be1c3c3-eeb9-45c6-ae81-243238b64098: # Wedding
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/activities
+    uriFormat: '{slug}'
+structure:
+  maxLevels: null
+  uid: 518b348b-dbdc-4c4b-ab48-528a568a2aab
+type: structure

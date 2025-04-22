@@ -1,0 +1,79 @@
+// Universal transform mixin with multiple transforms and support for !important
+@mixin transform($transforms...) {
+  $finalTransform: "";
+  $important: "";
+
+  @each $transform in $transforms {
+    // Check if !important is part of the transform string
+    @if str-slice($transform, -10) == "!important" {
+      $important: "!important";
+      $transform: str-slice(
+        $transform,
+        1,
+        -11
+      ); // Remove '!important' from the actual transform
+    }
+
+    // Combine transforms into a single string
+    $finalTransform: if(
+      $finalTransform == "",
+      $transform,
+      $finalTransform + " " + $transform
+    );
+  }
+
+  // Apply the transforms with !important (if needed) as a single rule
+  -moz-transform: #{$finalTransform} #{$important};
+  -o-transform: #{$finalTransform} #{$important};
+  -ms-transform: #{$finalTransform} #{$important};
+  -webkit-transform: #{$finalTransform} #{$important};
+  transform: #{$finalTransform} #{$important};
+}
+
+// flex ---------------------------
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// responsive ---------------------------
+@mixin respond-to($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respond-to-max($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respond-to-height($breakpoint) {
+  @media (min-height: $breakpoint) {
+    @content;
+  }
+}
+@mixin respond-to-max-height($breakpoint) {
+  @media (max-height: $breakpoint) {
+    @content;
+  }
+}
+
+// type ---------------------------
+@mixin small-headers {
+  font-family: $base;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  line-height: 1em;
+  @include respond-to-max($desktop-large) {
+    font-size: 0.65em;
+  }
+}
+@mixin heading($size) {
+  font-size: $size;
+  margin: unset;
+  color: $black;
+  line-height: 1.2em;
+}

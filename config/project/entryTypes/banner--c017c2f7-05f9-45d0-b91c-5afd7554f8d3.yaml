@@ -1,0 +1,72 @@
+color: sky
+fieldLayouts:
+  7f8f5644-d21c-441a-9c73-9794ae8cb866:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-04-22T04:06:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: text
+            includeInCards: false
+            instructions: null
+            label: Text
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8c90cb9b-9aab-4c6f-8829-799b6be739d4
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-22T04:06:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 58ebcb6d-1b4f-4020-a37f-50f505e63a51 # Button
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fa8bfd57-ff62-4916-b7c1-cffe09e35412
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-22T04:06:59+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: c21a1834-83f0-426e-8881-fbb41b038ee7 # Asset
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 992e77f9-c8b1-4ca3-b7ed-4d70e882dd6e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 12fc1f7c-bd46-4ba4-a93b-8ea93850e536
+        userCondition: null
+handle: banner
+hasTitleField: false
+icon: flag-pennant
+name: Banner
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

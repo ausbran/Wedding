@@ -1,0 +1,37 @@
+{% set event = craft.entries.section('schedule').type(eventType).one() %}
+{% if event %}
+	{% set address = event.address is defined and event.address ? event.address.one() : null %}
+
+	<div class="row event">
+		<div class="field event">
+			<h3>{{ event.title }}</h3>
+			<div>
+				<span>{{ event.date|date('F j, Y') }}</span>,
+				{% if event.startTime and event.endTime %}
+					<span>{{ event.startTime|date('gA') }}
+						-
+						{{ event.endTime|date('gA') }}</span>
+				{% endif %}
+			</div>
+			{% if address %}
+				<span>
+					{{ address.addressLine1 ?? '' }}
+					{{ address.locality ?? '' }},
+					{{ address.administrativeArea ?? '' }}
+					{{ address.postalCode ?? '' }}
+				</span>
+			{% endif %}
+			{{ event.description }}
+		</div>
+		<div class="field radios">
+			<label>
+				<input type="radio" name="{{ name }}" value="yes"/>
+				Yes
+			</label>
+			<label>
+				<input type="radio" name="{{ name }}" value="no"/>
+				No
+			</label>
+		</div>
+	</div>
+{% endif %}

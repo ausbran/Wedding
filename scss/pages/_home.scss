@@ -1,0 +1,254 @@
+// lottie animation that appears on the home page
+.lottie {
+  pointer-events: none;
+  position: fixed;
+  z-index: 99999999;
+  min-height: 100vh;
+  min-width: 100vw;
+  top: 0;
+  .background {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: $orange;
+  }
+}
+
+.home {
+  padding-bottom: 80px;
+  background-color: $orange;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  #toggle-audio {
+    position: absolute;
+    left: 50px;
+    bottom: 50px;
+    padding: 20px;
+    background: transparent;
+    border: 1.5px solid $black;
+    border-radius: $btn-radius;
+  }
+  .artwork-container {
+    position: relative;
+    width: 100vw;
+    height: calc(100vw * 0.5625);
+    max-width: 1920px;
+    max-height: 1080px;
+    background: url("/assets/art/bg.jpg") no-repeat center center;
+    background-size: contain;
+  }
+
+  .characters {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    .character-container {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+      transform: translate(-50%, -50%);
+      .character {
+        transition: $transition;
+        cursor: pointer;
+        width: 100%;
+
+        &:hover {
+          filter: brightness(1.3);
+        }
+      }
+
+      .svg-wrapper {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        height: auto;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        transition: $transition-medium;
+        &.schedule {
+          width: 8vw;
+        }
+        &.activities {
+          width: 9vw;
+        }
+        &.accommodations {
+          width: 15vw;
+        }
+        &.travel {
+          width: 6vw;
+        }
+        &.registry {
+          width: 8vw;
+        }
+        svg {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          overflow: visible;
+          .outline {
+            stroke: $black;
+            stroke-width: 4;
+          }
+          .text {
+            fill: $black;
+          }
+        }
+      }
+
+      &:hover .svg-wrapper {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .fire,
+    .surfboards {
+      z-index: 2;
+    }
+
+    // Positioning for specific characters and their SVGs
+    .van {
+      width: 16.9%;
+      left: 33.8%;
+      bottom: -0.3%;
+      .svg-wrapper {
+        left: -22%;
+        bottom: 13%;
+        transform: translate(-50%, -50%) rotate(-10deg);
+        .outline {
+          fill: $blue;
+        }
+      }
+    }
+    .surfers-beach {
+      width: 8.44%;
+      bottom: 14.5%;
+      right: 22.45%;
+      .svg-wrapper {
+        left: 0;
+        top: -23%;
+        transform: translate(-50%, -50%) rotate(-19deg);
+      }
+    }
+    .surfers-water {
+      width: 19.5%;
+      left: 59.45%;
+      bottom: 31.2%;
+      .svg-wrapper {
+        bottom: -57%;
+        left: 46%;
+        transform: translate(-50%, -50%) rotate(7deg);
+        .outline {
+          fill: $orange;
+        }
+      }
+    }
+    .tent {
+      width: 11.7%;
+      left: 61.2%;
+      bottom: 1%;
+      .svg-wrapper {
+        left: 150%;
+        bottom: 0%;
+        transform: translate(-50%, -50%) rotate(-6deg);
+      }
+    }
+    .dogs {
+      width: 4.7%;
+      left: 50.8%;
+      bottom: 13.2%;
+      .svg-wrapper {
+        left: 150%;
+        bottom: -102%;
+        transform: translate(-50%, -50%) rotate(-14deg);
+        .outline {
+          fill: $orange;
+        }
+      }
+    }
+    .fire {
+      width: 2.5%;
+      left: 49.34%;
+      bottom: 6%;
+      .svg-wrapper {
+        left: 326%;
+        top: 133%;
+        transform: translate(-50%, -50%) rotate(9deg);
+        .outline {
+          fill: $blue;
+        }
+      }
+    }
+    .austin {
+      width: 2.95%;
+      bottom: 8.4%;
+      left: 45.48%;
+
+      .svg-wrapper {
+        left: 230%;
+        top: 14%;
+        .outline {
+          fill: $orange-light;
+        }
+      }
+    }
+    .women {
+      right: 19.75%;
+      bottom: 19.8%;
+      width: 2.7%;
+      .svg-wrapper {
+        left: 90%;
+        top: -40%;
+        transform: translate(-50%, -50%) rotate(5deg);
+        .outline {
+          fill: $orange;
+        }
+      }
+    }
+    .julie {
+      width: 3.5%;
+      bottom: 28.6%;
+      left: 24.5%;
+      .svg-wrapper {
+        left: 0;
+        top: -20%;
+        transform: translate(-50%, -50%) rotate(-9deg);
+        .outline {
+          fill: $orange-light;
+        }
+      }
+    }
+    .surfboards {
+      width: 10%;
+      bottom: 4.5%;
+      left: 38.3%;
+      .svg-wrapper {
+        bottom: -100%;
+        right: -56%;
+        transform: translate(-50%, -50%) rotate(-18deg);
+        .outline {
+          fill: $orange-light;
+        }
+      }
+    }
+    .boat {
+      left: 41.8%;
+      width: 2.1%;
+      bottom: 39.4%;
+      .svg-wrapper {
+        transform: translate(-50%, -50%) rotate(15deg);
+        bottom: 22%;
+        left: 102%;
+      }
+    }
+  }
+}

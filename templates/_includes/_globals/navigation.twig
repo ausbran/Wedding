@@ -1,0 +1,24 @@
+<nav>
+	<div class="menu">
+		<a href="{{currentSite.baseUrl}}" class="logo">
+			{% include '_includes/_svg/logo-horizontal.svg' %}
+		</a>
+		<div class="primary-links">
+			{% set links = navigation.button.all() %}
+			{% for link in links %}
+				<a href="{{ link.buttonLink }}" class="link">{{link.buttonLabel}}</a>
+			{% endfor %}
+		</div>
+		{% include '_includes/_blocks/button' with {
+            link: '/rsvp',
+            label: 'RSVP',
+            fadeIn: false,
+			class: 'tan'
+        } %}
+
+		{# <audio id="background-audio" autoplay loop>
+					<source src="{{ siteUrl('assets/audio/audio.mp3') }}" type="audio/mpeg">
+				</audio> #}
+	</div>
+</nav>
+<div class="spacer"></div>

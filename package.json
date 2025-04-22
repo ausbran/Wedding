@@ -1,0 +1,28 @@
+{
+  "name": "public_html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "scss:build": "sass scss/main.scss:web/assets/css/main.css --no-source-map",
+    "scss:watch": "sass --watch scss/main.scss:web/assets/css/main.css --no-source-map",
+    "js:build": "webpack --mode production",
+    "js:watch": "webpack --watch --mode development",
+    "build": "npm run js:build && npm run scss:build",
+    "dev": "concurrently \"npm run scss:watch\" \"npm run js:watch\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-loader": "^9.2.1",
+    "concurrently": "^9.1.2",
+    "css-loader": "^7.1.2",
+    "sass": "^1.83.0",
+    "sass-loader": "^16.0.4",
+    "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.11",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

@@ -1,0 +1,25 @@
+columnSuffix: null
+handle: pnwFunDayActivities
+instructions: null
+name: 'PNW Fun Day Activities'
+searchable: false
+settings:
+  createButtonLabel: 'New Activity'
+  defaultIndexViewMode: cards
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 21f2fb39-76f1-448c-baa4-8690edbcaca4 # PNW Fun Day Activity
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: true
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

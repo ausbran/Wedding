@@ -1,0 +1,39 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 01e227c6-131f-48fb-a393-e9151fc2fa25 # Hotel
+  -
+    uid: 5ac1d612-4e4d-4fb4-898a-b9d60038be89 # Camground
+  -
+    uid: 8626d36d-20c9-4802-9a3a-a88547b75a91 # Accommodations
+  -
+    uid: 1362a6dd-04b5-4a6a-a36c-a68a862a1795 # Hotels
+  -
+    uid: e8e5d886-9f3f-458e-8275-f11487bc4d1f # Campgrounds
+handle: accommodations
+maxAuthors: 1
+name: Accommodations
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - accommodations
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4be1c3c3-eeb9-45c6-ae81-243238b64098: # Wedding
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/accommodations.twig
+    uriFormat: '{slug}'
+structure:
+  maxLevels: null
+  uid: a1719c1a-2faa-4503-ac28-40536a9e5110
+type: structure

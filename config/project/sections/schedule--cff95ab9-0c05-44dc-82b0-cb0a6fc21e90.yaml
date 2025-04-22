@@ -1,0 +1,41 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 142e7286-9807-44cd-8d02-0d9cc3866f54 # PNW Fun Day
+  -
+    uid: e753d18e-4d05-4c4d-8ed3-585a3c01408e # Welcome Beach Party
+  -
+    uid: 3fe2a8ed-99d6-4ba0-accb-e4d5bce66e45 # Wedding Day
+  -
+    uid: ded9cdae-f4d9-4a1c-9e04-50b97491d856 # After Party
+  -
+    uid: 6a83f780-2895-48a8-a585-a071268da247 # Hangover Brunch
+  -
+    uid: d98e1fb3-3750-44f0-8e94-762d3adbcc85 # Schedule
+handle: schedule
+maxAuthors: 1
+name: Schedule
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - schedule
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  4be1c3c3-eeb9-45c6-ae81-243238b64098: # Wedding
+    enabledByDefault: true
+    hasUrls: true
+    template: _pages/schedule.twig
+    uriFormat: '{slug}'
+structure:
+  maxLevels: null
+  uid: 89a0aff3-1a30-4e74-8ac4-7f82d0097cb4
+type: structure

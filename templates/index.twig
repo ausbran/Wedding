@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ currentSite.language }}">
+	<head>
+		<title>Julie and Austin's Wedding |
+			{% include '_includes/_globals/title' %}</title>
+		<meta charset="utf-8"/>
+		<meta
+		content="width=device-width, initial-scale=1.0" name="viewport">
+		{# <link rel="apple-touch-icon" sizes="76x76" href="{{ craft.rebrand.getIcon().url }}">
+				<link rel="icon" type="image/png" sizes="32x32" href="{{ craft.rebrand.getIcon().url }}">
+				<link rel="icon" type="image/png" sizes="16x16" href="{{ craft.rebrand.getIcon().url }}"> #}
+		<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="theme-color" content="#ffffff">
+		{% css "/assets/css/main.css" %}
+		{# check session to display lottie on initial load only #}
+		{% if not craft.app.session.get('lottieShown') %}
+			{% do craft.app.session.set('lottieShown', true) %}
+			{% set showLottie = true %}
+		{% else %}
+			{% set showLottie = false %}
+		{% endif %}
+
+	</head>
+	<body data-barba="wrapper">
+		{% include '_includes/_globals/navigation' %}
+		<main data-barba="container" data-body-class="{{ bodyClass ?? '' }}" {% if entry.type is defined %} data-barba-namespace="{{ entry.type }}" {% endif %}> {% block content %}{% endblock %}
+			</main>
+			{# {% include '_includes/_globals/footer' %} #}
+			<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+			<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+			<script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+			<script src="/assets/js/main.min.js" defer></script>
+		</body>
+	</html>

@@ -1,0 +1,70 @@
+<div class="slide card {{ slide.asset is not defined or not slide.asset ? 'border' }}">
+
+	{% if slide.asset is defined and slide.asset|length %}
+		<div class="image scale">
+			{% set asset = slide.asset.one() %}
+			{% if asset %}
+				{% include '_includes/_blocks/asset' with {
+                    ratio: '1:1',
+                    asset: asset
+                } %}
+			{% endif %}
+		</div>
+	{% endif %}
+
+	<div class="text">
+		{% set distance = slide.distance %}
+		{% set address = slide.address %}
+
+		{% if address or distance %}
+			<div class="inner">
+				{% if address %}
+					{% set address = slide.address.one() %}
+					<div class="address">
+						<h3>
+							{{ address.locality ?? '' }},
+							{{ address.administrativeArea ?? '' }}</h3>
+					</div>
+				{% endif %}
+
+				{% if distance %}
+					<h3>{{ distance }}
+						Away</h3>
+				{% endif %}
+			</div>
+		{% endif %}
+
+
+		<h2 class="name">{{ slide.title }}</h2>
+		{% set date = slide.date %}
+		{% if date %}
+			<h3>{{ date | date('Y') }}</h3>
+		{% endif %}
+
+		{{ slide.description}}
+
+		{% set link = slide.buttonLink %}
+		{% set label = label ?? 'Learn More' %}
+		{% set cost = slide.cost %}
+
+		{% if link or cost %}
+			<div class="buttons slide">
+				{% if link %}
+					{% include '_includes/_blocks/button' with {
+						link: link,
+						label: label,
+						fadeIn: false
+					} %}
+				{% endif %}
+
+				{% if cost is not null %}
+					{% set amount = cost.getAmount() / 100 %}
+					<div class="btn cost">
+						<span class="label">${{ amount|number_format(2) }}</span>
+					</div>
+				{% endif %}
+			</div>
+		{% endif %}
+
+	</div>
+</div>

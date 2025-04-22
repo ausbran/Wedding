@@ -1,0 +1,20 @@
+color: null
+fieldLayouts:
+  2dc49c83-d5d5-440a-86ba-f22defd60c9a:
+    tabs:
+      -
+        elementCondition: null
+        name: Content
+        uid: bb95ddd7-a74b-4d6c-ab68-badc71f64af9
+        userCondition: null
+handle: hotels
+hasTitleField: false
+icon: null
+name: Hotels
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Hotels
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

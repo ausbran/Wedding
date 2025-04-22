@@ -1,0 +1,55 @@
+color: fuchsia
+fieldLayouts:
+  2240a18f-39b9-4218-85a8-c1c77db9988f:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-04-22T04:55:09+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: text
+            includeInCards: false
+            instructions: null
+            label: Text
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 57c2bd35-3680-4ea9-88f4-3307dac417bf
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-22T04:55:09+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 58ebcb6d-1b4f-4020-a37f-50f505e63a51 # Button
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0bd30baf-c31f-4a82-ad71-df4ba1efecd5
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: e2dc8c4d-37ba-474e-a0bc-cbb44dd2686c
+        userCondition: null
+handle: home
+hasTitleField: false
+icon: house
+name: Home
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

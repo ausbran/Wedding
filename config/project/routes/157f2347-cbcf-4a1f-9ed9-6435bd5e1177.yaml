@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 1
+template: _pages/schedule
+uriParts:
+  - schedule
+uriPattern: schedule

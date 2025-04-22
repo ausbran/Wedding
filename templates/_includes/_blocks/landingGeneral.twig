@@ -1,0 +1,30 @@
+{% extends '_includes/_blocks/landingBase' %}
+
+{% block content %}
+    {% for block in blocks %}
+        {% switch block.type.handle %}
+            {% case 'text' %}
+                {% include '_includes/_blocks/text' %}
+            {% case 'buttons' %}
+                {% for button in block.buttons.all() %}
+                    {% include '_includes/_blocks/button' with {
+                        link: button.buttonLink,
+                        label: button.buttonLabel
+                    } %}
+                {% endfor %}
+            {% case 'iframe' %}
+                {% include '_includes/_blocks/iframe' %}
+        {% endswitch %}
+    {% endfor %}
+{% endblock %}
+
+{% block background %}
+    {% for block in blocks %}
+        {% if block.type.handle == 'asset' %}
+            {% include '_includes/_blocks/asset' with { 
+                asset: block.asset.one(),
+                assetMobile: block.assetMobile.one()
+            } %}
+        {% endif %}
+    {% endfor %}
+{% endblock %}

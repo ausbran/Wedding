@@ -1,0 +1,34 @@
+{# Initialize variables #}
+{% set textAlignment = '' %}
+{% set maxChildMaxWidth = null %}
+
+{% if blocks is defined %}
+    {# Loop through blocks to find textAlignment and maximum maxWidth #}
+    {% for block in blocks %}
+        {% if block.textAlignment is not empty and textAlignment == '' %}
+            {% set textAlignment = block.textAlignment %}
+        {% endif %}
+        {% if block.maxWidth is not null and (maxChildMaxWidth is null or block.maxWidth > maxChildMaxWidth) %}
+            {% set maxChildMaxWidth = block.maxWidth %}
+        {% endif %}
+    {% endfor %}
+{% else %} 
+    {% set textAlignment = entry.textAlignment %}
+    {% set maxChildMaxWidth = entry.maxWidth %}
+{% endif %}
+
+<div class="landing {{ entry.slug }}">
+    <div class="inner {{ textAlignment }}">
+        <div class="text fade-in" data-cascade style="max-width: 575px">
+        {# <div class="text fade-in" data-cascade {% if maxChildMaxWidth is not null %}style="max-width: {{ maxChildMaxWidth }}px;"{% endif %}> #}
+            {% block content %}
+                {# Default content, can be overridden in child templates #}
+            {% endblock %}
+        </div>
+    </div>
+    <div class="background">
+        {% block background %}
+            {# Default background logic, can be overridden in child templates #}
+        {% endblock %}
+    </div>
+</div>

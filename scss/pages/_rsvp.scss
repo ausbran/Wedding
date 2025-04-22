@@ -1,0 +1,456 @@
+.rsvp {
+  margin-top: 100px;
+  @include flex-center;
+  padding: 4rem 1.5rem;
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    -webkit-text-fill-color: $white;
+    transition: background-color 5000s ease-in-out 0s !important;
+    background-color: darken($orange, 50%) !important;
+  }
+
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid $white;
+  }
+
+  .form-success {
+    max-width: 500px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+    text-align: center;
+    font-size: 1.25rem;
+    * {
+      color: $white;
+    }
+  }
+  .form-success.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  form {
+    @include flex-center;
+    flex-direction: column;
+    max-width: 650px;
+    width: 100%;
+    transition:
+      opacity 0.4s ease,
+      transform 0.4s ease;
+    opacity: 1;
+    transform: translateY(0);
+    *:not(.btn) {
+      color: $white;
+    }
+
+    input:-internal-autofill-selected {
+      background-color: darken($orange, 7%) !important;
+      color: $white !important;
+    }
+    h2 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+      color: $white;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+    }
+
+    .form-step,
+    .adult,
+    .child,
+    .activity {
+      transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+      will-change: opacity, transform;
+    }
+    .form-success {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      text-align: center;
+      padding: 4rem 2rem;
+
+      &.show {
+        opacity: 1;
+      }
+    }
+
+    .form-step {
+      width: 100%;
+      &.intro {
+        margin: auto;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin: 0 0 0.25rem;
+        color: $white;
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 0.75rem 0.75rem 0.65rem 0.75rem;
+        border: 1px solid $white;
+        background: none;
+        color: $white;
+        font-family: inherit;
+        font-size: 1rem;
+        border-radius: $btn-radius;
+      }
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: $orange $arrow no-repeat right 0.7rem center;
+        background-size: 0.9rem;
+        padding-right: 2.25rem;
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        option {
+          color: black; // or your preferred dropdown text color
+        }
+      }
+      textarea {
+        min-width: 100%;
+        max-width: 100%;
+        min-height: 100px;
+        max-height: 300px;
+      }
+      .row,
+      .adult,
+      .child,
+      .add-buttons {
+        margin-bottom: 1.25rem;
+      }
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        &.event {
+          margin-bottom: 0;
+          &:not(:first-of-type) {
+            margin-top: 2rem;
+          }
+          &.details {
+            flex-direction: column;
+            label {
+              margin: unset;
+            }
+          }
+        }
+        &.adult-wrapper {
+          margin-bottom: 0;
+        }
+        .field {
+          width: 100%;
+          &.event {
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            p {
+              font-size: 0.8rem;
+            }
+          }
+          &.trash {
+            width: 30px;
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 0.75rem;
+          }
+          &.radios {
+            width: 40%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1.5rem;
+            label {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 0.25rem;
+              font-size: 1rem;
+              input[type="radio"] {
+                padding: 0.5rem;
+                appearance: none;
+                border: 2px solid $white;
+                border-radius: 50%;
+                background-color: transparent;
+                position: relative;
+                top: -3.5px;
+                transition:
+                  background 0.2s,
+                  border 0.2s;
+
+                // &:checked {
+                //   border-color: $white;
+                //   background-color: $white;
+                // }
+
+                &:focus {
+                  outline: none;
+                  box-shadow: 0 0 0 2px rgba($white, 0.3);
+                }
+
+                &::before {
+                  content: "";
+                  position: absolute;
+                  top: 0.125rem;
+                  left: 0.125rem;
+                  width: 0.75rem;
+                  height: 0.75rem;
+                  background-color: $white;
+                  border-radius: 50%;
+                  opacity: 0;
+                  transition: opacity 0.2s;
+                }
+
+                &:checked::before {
+                  opacity: 1;
+                }
+              }
+            }
+          }
+        }
+        .number-field {
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          input[type="number"] {
+            width: 100%;
+            padding-right: 2.5rem;
+            -moz-appearance: textfield;
+            appearance: textfield;
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+
+          .custom-spinner {
+            position: absolute;
+            right: 0.75rem;
+            top: 0;
+            bottom: -0.05rem;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            button {
+              background: none;
+              border: none;
+              color: $white;
+              font-size: 0.8rem;
+              line-height: 1;
+              cursor: pointer;
+              padding: 0.05rem;
+
+              &:hover {
+                opacity: 0.5;
+              }
+
+              &.spin-up,
+              &.spin-down {
+                width: 0.9rem;
+                height: 0.9rem;
+                background-position: center;
+                background-repeat: no-repeat;
+              }
+
+              &.spin-up {
+                background-image: $arrow;
+                transform: rotate(180deg);
+              }
+
+              &.spin-down {
+                background-image: $arrow;
+              }
+            }
+          }
+        }
+        input,
+        select {
+          width: 100%;
+          flex: 1;
+        }
+      }
+
+      textarea {
+        min-height: 120px;
+      }
+
+      .adult,
+      .child {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        border-radius: 0.5rem;
+      }
+
+      .adult,
+      .child,
+      .activity {
+        h4 {
+          color: $white;
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      .pnw-yes,
+      .pnw-no {
+        margin-left: 1rem;
+        background: none;
+        border: 2px solid $white;
+        color: $white;
+        font-weight: bold;
+        padding: 0.5rem 1.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+      }
+
+      #pnw-activities {
+        margin-top: 0.5rem;
+      }
+
+      .activity {
+        background-color: rgba(255, 255, 255, 0.05);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        .row {
+          margin-bottom: 0;
+        }
+      }
+
+      .activity-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .add-activity {
+        background: none;
+        color: $white;
+        border: none;
+        border-bottom: 1px solid $white !important;
+        cursor: pointer;
+        margin-top: 1rem;
+        font-size: 1rem;
+      }
+
+      .add-buttons {
+        display: flex;
+        gap: 2rem;
+
+        button {
+          background: none;
+          color: $white;
+          border: none;
+          cursor: pointer;
+          border-bottom: 1px solid $white !important;
+        }
+      }
+      .remove {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        transition: color 0.2s ease;
+
+        svg.icon-trash {
+          width: 18px;
+          height: 18px;
+          fill: currentColor;
+        }
+
+        &:hover {
+          color: $tan; // or darken($white, 20%) or your brand accent
+        }
+      }
+
+      .remove,
+      .add {
+        padding: unset;
+        font-size: 0.9rem;
+        transition: $transition;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      .next,
+      .submit {
+        width: 100%;
+      }
+
+      // .next,
+      // .submit,
+      // [data-response="yes"],
+      // [data-response="no"] {
+      //   text-transform: uppercase;
+      //   padding: 1rem 2.5rem;
+      //   font-weight: bold;
+      //   font-size: 1rem;
+      //   border: 2px solid $black;
+      //   background: $tan;
+      //   color: $black;
+      //   border-radius: 0.5rem;
+      //   cursor: pointer;
+      //   transition: background 0.2s;
+
+      //   &:hover {
+      //     background: darken($tan, 5%);
+      //   }
+      // }
+    }
+  }
+  @include respond-to-max($mobile) {
+    form {
+      .form-step {
+        h2 {
+          text-align: left;
+        }
+        .row {
+          flex-direction: column;
+          .field {
+            &.radios {
+              justify-content: flex-start;
+            }
+            &.trash {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

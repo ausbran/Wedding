@@ -1,0 +1,37 @@
+color: null
+fieldLayouts:
+  778b0920-f5e4-4e47-be98-61daf3c3235c:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-03-04T21:49:17+00:00'
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 13a6e507-be7a-44a0-b4d2-3777a0aef2f7
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: add780c5-2d3f-42a1-8b4d-edcc02e52ea0
+        userCondition: null
+handle: activities
+hasTitleField: false
+icon: null
+name: Activities
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Activities
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

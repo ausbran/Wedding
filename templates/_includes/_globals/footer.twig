@@ -1,0 +1,19 @@
+<footer>
+	<div class="footer-links">
+		{% set primaryLinks = footer.primaryLinks.all() %}
+		{% for link in primaryLinks %}
+			<a href="{{ link.getUrl() }}" class="link">
+				{{ link.title }}
+			</a>
+		{% endfor %}
+		<a class="social-link" href="https://www.instagram.com/jhbuilders_jacksonhole/" target="_blank" rel="noopener noreferrer">
+			{% include '_includes/_svg/instagram.svg' %}
+		</a>
+		<p class="copyright">&copy;{{ 'now' | date('Y') }} {{ siteName }}. All Rights Reserved.</p>
+	</div>
+	<div class="logo fade-in">
+		<a href="{{ currentSite.baseUrl }}">
+            {% include '_includes/_svg/logo-vertical.svg' %}
+        </a>
+	</div>
+</footer>

@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "Bimbo";
+  src:
+    url("fonts/Bimbo-Sharpie.woff2") format("woff2"),
+    url("fonts/Bimbo-Sharpie.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "F37 Ginger Round";
+  src:
+    url("fonts/F37GingerRoundRegular.woff2") format("woff2"),
+    url("fonts/F37GingerRoundRegular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Retrokia Caps Rounded";
+  src:
+    url("fonts/RetrokiaCaps-Rounded.woff2") format("woff2"),
+    url("fonts/RetrokiaCaps-Rounded.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+html {
+  font-size: 16px;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  font-family: $base;
+  font-weight: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.btn .label,
+.btn,
+.link {
+  font-family: $header;
+}
+.banner h1 {
+  font-family: $script;
+}
+h1,
+.h1 {
+  @include heading($h1);
+  line-height: 1em;
+}
+h2,
+.h2 {
+  @include heading($h2);
+}
+h3,
+.h3 {
+  @include heading($h3);
+}
+h4,
+.h4,
+.h4 h3 {
+  //included .h4 h3 for projectInfo size variable
+  @include heading($h4);
+}
+h1,
+p {
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+p,
+a {
+  font-size: $p;
+  line-height: 1.7em;
+}
+a {
+  color: inherit;
+}
+.top-left {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.top-center {
+  text-align: center;
+  justify-content: center;
+  align-items: flex-start;
+  .text {
+    align-items: center;
+  }
+}
+.top-right {
+  text-align: left;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+.center-left {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: center;
+}
+.center-center {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  .text {
+    align-items: center;
+  }
+}
+.center-right {
+  text-align: left;
+  justify-content: flex-end;
+  align-items: center;
+}
+.bottom-left {
+  text-align: left;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+.bottom-center {
+  text-align: center;
+  justify-content: center;
+  align-items: flex-end;
+  .text {
+    align-items: center;
+  }
+}
+.bottom-right {
+  text-align: left;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.landing-section {
+  .top-left,
+  .top-center,
+  .top-right {
+    padding-top: calc($padding-large * 2) !important;
+  }
+}
+@include respond-to-max($desktop-large) {
+  // p {
+  //   font-size: .875em;
+  // }
+}
+@include respond-to-max($desktop) {
+  .landing-section {
+    .top-left,
+    .top-center,
+    .top-right {
+      padding-top: calc($padding-large * 1.5) !important;
+    }
+  }
+}
+@include respond-to-max($tablet) {
+  .landing-section {
+    .top-left,
+    .top-center,
+    .top-right {
+      padding-top: calc($padding-large) !important;
+    }
+  }
+}
+@include respond-to-max($mobile) {
+  h1,
+  .h1 {
+    font-size: $h1-mobile;
+  }
+
+  h2,
+  .h2 {
+    font-size: $h2-mobile;
+  }
+
+  h3,
+  .h3 {
+    font-size: $h3-mobile;
+  }
+
+  h4,
+  .h4,
+  .h4 h3 {
+    font-size: $h4-mobile;
+  }
+  p {
+    font-size: $p-mobile;
+  }
+}

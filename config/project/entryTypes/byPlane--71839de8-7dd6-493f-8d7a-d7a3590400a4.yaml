@@ -1,0 +1,67 @@
+color: null
+fieldLayouts:
+  2dbe9e9f-7924-463f-a26a-e6475ee7b697:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-03-04T22:13:49+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: b9eb0647-aa23-459b-a9e8-55ad920b5716
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-04T22:15:29+00:00'
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: cfd69e32-f8b2-4f26-88c4-71e4ca87f8a1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: cf4d35c8-cb60-421d-bc55-a3bf4b218ebd
+        userCondition: null
+handle: byPlane
+hasTitleField: true
+icon: null
+name: 'By Plane'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: 'By Plane'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

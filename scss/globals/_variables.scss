@@ -1,0 +1,103 @@
+// color---------------------------------------
+$orange: #e47d52;
+$orange-light: #f59b21;
+$black: #2a2b2d;
+$grey: #eaeaea;
+$white: #fff8ec;
+$tan: #ece3cc;
+$blue: #2f9c9f;
+
+// Convert SCSS variable to CSS variable
+:root {
+  --red: #{$orange};
+  --grey: #{$grey};
+}
+
+// form
+$arrow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 7.4' fill='white'%3E%3Cpath d='M1.4,0l4.6,4.6L10.6,0l1.4,1.4-6,6L0,1.4,1.4,0Z'/%3E%3C/svg%3E");
+
+// sizing---------------------------------------
+$width: calc(100vw - 150px);
+$width-medium: calc(100vw - 100px);
+$width-small: calc(100vw - 40px);
+$max-width: 1550px;
+$navHeight: 80px;
+
+// shapes---------------------------------------
+$circle: 75px;
+$radius: 15px;
+
+// transitions----------------------------------
+$ease: cubic-bezier(0.23, 1, 0.32, 1);
+$transition-short: 0.1s $ease;
+$transition: 0.28s $ease;
+$transition-medium: 0.5s $ease;
+$transition-long: 0.8s $ease;
+
+// type-----------------------------------------
+$base: "F37 Ginger Round", helvetica, sans-serif !important;
+$header: "Retrokia Caps", helvetica, sans-serif !important;
+$script: "Bimbo", helvetica, sans-serif !important;
+
+// shadows--------------------------------------
+$text-shadow: 0px 1px 2px rgba($black, 0.1);
+$box-shadow: 0px 5px 30px rgba($black, 0.1);
+
+// spacing-----------------------------------------
+$margin-xlarge: 200px;
+$margin-large: 150px;
+$margin: 100px;
+$margin-medium: 30px;
+$margin-small: 20px;
+$margin-xsmall: 20px;
+$padding-large: 100px;
+$padding: 60px;
+$padding-medium: 30px;
+$padding-small: 20px;
+$gap-xlarge: 75px;
+$gap-large: 40px;
+$gap: 30px;
+$gap-medium: 20px;
+$gap-small: 10px;
+$scroll-padding: calc((100% - $max-width) / 2);
+$scroll-padding-medium: 75px;
+$scroll-padding-small: 50px;
+$scroll-padding-xsmall: 25px;
+
+// element heights------------------------------
+$min-box-height: 700px;
+
+// radius---------------------------------------
+$box-radius: 10px;
+$btn-radius: 3px;
+
+//breakpoints----------------------------------
+$mobile-small: 375px;
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$desktop-large: 1200px;
+$desktop-xlarge: 1500px;
+$desktop-xxlarge: 1920px;
+$desktop-xxxlarge: 2200px;
+$scroll-padding-border: 1750px;
+
+// fonts--------------------------------------
+$h1: 3.25rem; // 56px
+$h2: 2rem; // 36px
+$h3: 1.15rem; // 20px
+$h4: 1rem; // 20px
+$p: 1rem; // 16px (for body text)
+
+// Desktop sizes
+$h1-desktop: 3.25rem; // 56px
+$h2-desktop: 2rem; // 36px
+$h3-desktop: 1.15rem; // 20px
+$h4-desktop: 1rem; // 20px
+
+// Mobile sizes
+$h1-mobile: 3.25rem; // 56px
+$h2-mobile: 2rem; // 36px
+$h3-mobile: 1.15rem; // 20px
+$h4-mobile: 1rem; // 20px
+$p-mobile: 1rem; // 16px

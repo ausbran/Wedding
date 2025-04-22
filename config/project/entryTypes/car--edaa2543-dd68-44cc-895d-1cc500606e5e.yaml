@@ -1,0 +1,86 @@
+color: sky
+fieldLayouts:
+  a9c8c183-15e4-4d87-b07c-c6dc3544534f:
+    cardView:
+      - 'layoutElement:16a8831f-5da7-4266-b5b8-a17a7f1ae5c5'
+      - 'layoutElement:406400e6-973a-43e4-a10d-e92cecc73196'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-03-03T22:06:22+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 9a4c3d93-97e4-469d-8605-fc9ee50a8235
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:07:34+00:00'
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 16a8831f-5da7-4266-b5b8-a17a7f1ae5c5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:07:34+00:00'
+            elementCondition: null
+            fieldUid: ab6c365b-93ed-48d3-a3bc-379b26d99166 # Distance from Venue
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 406400e6-973a-43e4-a10d-e92cecc73196
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 15222b37-cd97-4588-98cd-604995ba0d32
+        userCondition: null
+handle: car
+hasTitleField: true
+icon: car
+name: Car
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

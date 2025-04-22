@@ -1,0 +1,37 @@
+color: null
+fieldLayouts:
+  7d02c553-eb7a-4912-8234-89cdb356141b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2025-03-04T18:59:49+00:00'
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6097323-0d53-4d09-807d-95537038ee5d
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: b3a8a0fb-2167-4a63-87f1-7059552d8a8d
+        userCondition: null
+handle: schedule
+hasTitleField: false
+icon: null
+name: Schedule
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Schedule
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

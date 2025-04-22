@@ -1,0 +1,20 @@
+color: null
+fieldLayouts:
+  b0fd8b83-661f-48ce-979d-9f0b9a91cde3:
+    tabs:
+      -
+        elementCondition: null
+        name: Content
+        uid: b472f980-617f-4b0f-8004-af603940370d
+        userCondition: null
+handle: campgrounds
+hasTitleField: false
+icon: null
+name: Campgrounds
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: Campgrounds
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

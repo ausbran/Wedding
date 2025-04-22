@@ -1,0 +1,44 @@
+{% extends '_includes/_blocks/landingBase' %}
+
+{% set projects = entry.featuredProject.all() ?? [] %}
+{% if projects|length > 0 %}
+    {% set featuredProject = random(projects) %}
+{% else %}
+    {% set featuredProject = null %}
+{% endif %}
+
+{% block content %}
+    {% if featuredProject %}
+        {{ entry.text }}
+        {% set buttonLabel = 'Explore ' ~ featuredProject.title %}
+        <div class="buttons wrapper mobile-slider-spacer">
+            {% include '_includes/_blocks/button' with {
+                link: featuredProject.url,
+                label: buttonLabel
+            } %}
+            {% if entry.buttons|length %}
+                {% for button in entry.buttons.all() %}
+                        {% include '_includes/_blocks/button' with {
+                            link: button.buttonLink,
+                            label: button.buttonLabel
+                        } %}
+                {% endfor %}
+            {% endif %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block background %}
+    {% if featuredProject %}
+        <div class="carousel gradient" data-slide-time="{{ entry.slideTime ?? 15 }}">
+            {% for asset in featuredProject.projectImages.all()|slice(0, 5) %}
+                <div class="carousel-item">
+                    {% include '_includes/_blocks/asset' %}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    {% endif %}
+{% endblock %}

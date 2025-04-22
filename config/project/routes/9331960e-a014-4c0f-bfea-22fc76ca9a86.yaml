@@ -1,0 +1,6 @@
+siteUid: null
+sortOrder: 4
+template: _pages/activities
+uriParts:
+  - activities
+uriPattern: activities

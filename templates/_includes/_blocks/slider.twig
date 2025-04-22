@@ -1,0 +1,85 @@
+{# Default Values with Priority Order: Passed-in Variable → Block Content → Fallback #}
+
+{% set slides = slides ?? (block.slides is defined ? block.slides.all() : []) %}
+{% set visibleCards = visibleCards ?? '2' %}
+{% set class = class ?? null %}
+{% set slideHeader = slideHeader ?? (block.header is defined ? block.header : null) %}
+{% set slideBody = slideBody ?? (block.body is defined ? block.body : null) %}
+{% set arrows = arrows ?? true %}
+{% set marginTop = marginTop ?? 'margin-top' %}
+{% set marginBottom = marginBottom ?? 'margin-bottom' %}
+{% set fadeIn = fadeIn is defined ? 'fade-in' : '' %}
+{% set counter = counter ?? false %}
+
+
+<div
+	id="{{ slideHeader ? slideHeader|kebab : 'slider' }}" class="slider-outer {{ marginTop }} {{ marginBottom }} {{ fadeIn }}" data-cascade>
+
+	{# header #}
+	<div class="slider-header">
+		<div class="inner">
+			{% if slideHeader %}
+				<h1>{{ slideHeader }}</h1>
+			{% endif %}
+			{% if content.date or content.startTime or content.endTime or content.address %}
+				<div class="details">
+					{% if content.date %}
+						<h3>{{ content.date|date('F j, Y') }}</h3>
+					{% endif %}
+
+					{% if content.startTime or content.endTime %}
+						<div class="time">
+							{% if content.startTime %}
+								<h3>{{ content.startTime|date('g:iA') }}</h3>
+							{% endif %}
+							{% if content.endTime %}
+								<h3>-{{ content.endTime|date('g:iA') }}</h3>
+							{% endif %}
+						</div>
+					{% endif %}
+
+					{% if content.address %}
+						{% set address = content.address.one() %}
+						<div class="address">
+							<h3>{{ address.addressLine1 ?? '' }}
+								{{ address.locality ?? '' }}
+								{{ address.administrativeArea ?? '' }}
+								{{ address.postalCode ?? '' }}</h3>
+						</div>
+					{% endif %}
+				</div>
+			{% endif %}
+
+
+			{% if slideBody %}
+				{{ slideBody }}
+			{% endif %}
+
+			{% if counter %}
+				<h3 class="slide-count">{{ slides|length }}
+					{{ slides|length == 1 ? 'thing' : 'things' }}
+					to do
+				</h3>
+			{% endif %}
+
+		</div>
+		{% if arrows %}
+			<div class="arrows">
+				{% include '_includes/_icons/arrowPrev' with { firstArrow: 'red-arrow', secondArrow: 'black-arrow' } %}
+				{% include '_includes/_icons/arrowNext' with { firstArrow: 'red-arrow', secondArrow: 'black-arrow' } %}
+			</div>
+		{% endif %}
+	</div>
+
+	{# slides #}
+	<div class="slider-container">
+		<div class="slider {{ class }} visible-cards-{{ visibleCards }}">
+			{% block slides %}
+				{% for slide in slides %}
+					{% include slideTemplate with { slide: slide } %}
+				{% endfor %}
+			{% endblock %}
+		</div>
+	</div>
+
+</div>

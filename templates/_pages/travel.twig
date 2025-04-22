@@ -1,0 +1,20 @@
+{% extends "_layouts/base" %}
+
+{% block page %}
+	{% include '_includes/_blocks/tout' %}
+
+	{% set parent = craft.entries.section('travel').type('travel').one() %}
+
+	{% for content in parent.children.all() %}
+		{% set slides = content.children.all() %}
+		{% include '_includes/_blocks/slider' with {
+        slides: slides,
+        visibleCards: 3,
+        slideHeader: content.title,
+        slideBody: content.description,
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slideCard'
+    } %}
+	{% endfor %}
+
+{% endblock %}

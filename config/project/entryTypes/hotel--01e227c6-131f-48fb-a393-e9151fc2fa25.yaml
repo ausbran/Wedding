@@ -1,0 +1,136 @@
+color: lime
+fieldLayouts:
+  8668fc2a-ba8b-4334-9fea-c32036ab6aff:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2025-03-03T21:56:11+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: 'Hotel Name'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: d130925a-7efd-4398-abe3-bb9c517d46d1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-22T21:01:47+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ebc895af-2bcc-4634-a4d3-0731e07c7375 # Description
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1a01d3ae-b87a-4a49-af6b-4b15c794855f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:00:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 65968bc2-8227-4610-b7f5-4f757bb08b0b # Address
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Hotel Address'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 87783a61-e412-4f3b-a7d6-6a5e56aa347b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:00:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 9bba6d89-3667-47b0-ba07-ab4f7c4b94f7 # Button Link
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Hotel Website'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd147d66-fb57-4971-9995-1d2f67368d27
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-04-22T20:51:28+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: ab6c365b-93ed-48d3-a3bc-379b26d99166 # Distance from Venue
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d0b25602-290c-4ef7-9104-8673fe1901d3
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-03-03T22:00:56+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: c21a1834-83f0-426e-8881-fbb41b038ee7 # Asset
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: 'Hotel Image'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f5b40f6a-1c81-454a-ace9-b05358ef2b80
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c579d6b7-2b43-4a19-ba05-367d4eaf4ffd
+        userCondition: null
+handle: hotel
+hasTitleField: true
+icon: bed
+name: Hotel
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

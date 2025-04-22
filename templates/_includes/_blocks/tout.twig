@@ -1,0 +1,27 @@
+{% set class = class ?? null %}
+
+<div class="banner body {{ class }}">
+	<div class="text">
+		{{ entry.text }}
+		<div class="buttons">
+			{% for block in entry.button.all() %}
+				{% switch block.type.handle %}
+					{% case 'buttonMatrix' %}
+						{% include '_includes/_blocks/button' with {
+						link: block.buttonLink,
+						label: block.buttonLabel
+					} %}
+				{% endswitch %}
+			{% endfor %}
+		</div>
+	</div>
+	{% if entry.asset.one() is defined %}
+		{% set asset = entry.asset.one() %}
+		<div class="background gradient {% if height is defined %}{{ height }}{% endif %}">
+			{% include '_includes/_blocks/asset' with {
+                    ratio: '1:1',
+                    asset: asset
+                } %}
+		</div>
+	{% endif %}
+</div>

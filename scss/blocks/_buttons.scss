@@ -1,0 +1,189 @@
+.buttons {
+  .btn {
+    flex: 1;
+    justify-content: center;
+  }
+  // for the buttons at bottom of slides that have cost and link
+  &.slide {
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: unset;
+    .btn {
+      flex: unset;
+    }
+  }
+}
+form .buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.close {
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+.anchor {
+  .btn-arrow {
+    @include transform(rotate(90deg));
+  }
+}
+.red .back {
+  .btn {
+    color: $white;
+  }
+}
+.hover {
+  transition: $transition;
+  &:hover {
+    opacity: 0.5;
+    @include transform(translate3d(0, -1px, 0));
+  }
+}
+.btn {
+  padding: 15px 30px;
+  border-radius: $btn-radius;
+  background-color: $orange;
+  width: fit-content;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer !important;
+  font-size: 0.75rem;
+  color: $white;
+  transition: $transition;
+  border: none;
+  white-space: nowrap;
+  // arrows that are to the right of text on all buttons
+  &.tan {
+    text-transform: uppercase;
+    background-color: $tan;
+    border: 1.5px solid $black;
+    color: $black;
+    padding: 10px 40px;
+  }
+  &.cost {
+    cursor: default !important;
+    background-color: transparent;
+    border: 2px solid $orange;
+    color: $orange !important;
+    padding: 13px 30px;
+    &:hover {
+      filter: unset;
+      @include transform(translate3d(0, 0, 0));
+    }
+  }
+  &:hover {
+    filter: brightness(1.1);
+    @include transform(translate3d(0, -1px, 0));
+  }
+}
+.nav .btn-arrow svg:first-of-type * {
+  fill: $orange;
+  stroke: unset;
+}
+.nav .btn-arrow svg:last-of-type * {
+  fill: $black;
+  stroke: unset;
+}
+.magnify .btn-arrow svg:first-of-type {
+  g,
+  circle:first-of-type {
+    stroke: unset !important;
+  }
+  circle:last-of-type,
+  path {
+    stroke: $orange;
+  }
+}
+.magnify .btn-arrow svg:last-of-type {
+  g,
+  circle:first-of-type {
+    stroke: unset !important;
+  }
+  circle:last-of-type,
+  path {
+    stroke: $black;
+  }
+}
+
+// arrows that are used for carousels
+.arrows {
+  border-radius: $btn-radius;
+  display: flex;
+  .arrow-prev {
+    border-radius: $btn-radius 0 0 $btn-radius;
+  }
+  .arrow-next {
+    border-radius: 0 $btn-radius $btn-radius 0;
+  }
+}
+.arrow {
+  .btn-arrow {
+    right: unset;
+    bottom: unset;
+  }
+  &.dark {
+    background-color: $white;
+    svg {
+      fill: $orange;
+    }
+  }
+  &.arrow-prev svg {
+    &:first-of-type {
+      @include transform(translate3d(0, 0, 0), rotate(180deg));
+    }
+    &:last-of-type {
+      @include transform(translate3d(115%, 0, 0), rotate(180deg));
+    }
+  }
+  &.arrow-next svg {
+    &:first-of-type {
+      @include transform(translate3d(0, 0, 0));
+    }
+    &:last-of-type {
+      @include transform(translate3d(-115%, 0, 0));
+    }
+  }
+  &:hover {
+    &.arrow-prev svg {
+      &:first-of-type {
+        @include transform(translate3d(-115%, 0, 0), rotate(180deg));
+      }
+      &:last-of-type {
+        @include transform(translate3d(0, 0, 0), rotate(180deg));
+      }
+    }
+    &.arrow-next svg {
+      &:first-of-type {
+        @include transform(translate3d(115%, 0, 0));
+      }
+      &:last-of-type {
+        @include transform(translate3d(0, 0, 0));
+      }
+    }
+  }
+  &.disabled {
+    opacity: 0;
+  }
+}
+
+@include respond-to-max($desktop) {
+  .btn {
+    &.icon {
+      padding: 17px;
+      &:not(.arrow) {
+        margin: 0 -0.5px;
+      }
+    }
+  }
+}
+@include respond-to-max($tablet) {
+  .btn {
+    font-size: 0.85rem;
+  }
+}
+@include respond-to-max($mobile) {
+}

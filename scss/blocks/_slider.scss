@@ -1,0 +1,272 @@
+.block-wrapper h2 {
+  margin-bottom: $margin-small;
+}
+.slider-header,
+.slider {
+  padding-left: $scroll-padding;
+  scroll-padding-left: $scroll-padding;
+}
+.slider-header {
+  max-width: $max-width;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+  padding-right: $scroll-padding-medium;
+  box-sizing: content-box;
+  gap: $gap-medium;
+  .inner {
+    display: flex;
+    flex-direction: column;
+    h1 {
+      margin-bottom: 10px;
+    }
+    .details {
+      display: flex;
+      gap: $gap-medium;
+      align-items: center;
+      margin-bottom: 20px;
+      &:empty {
+        display: none;
+      }
+      .time {
+        display: flex;
+      }
+    }
+    p {
+      max-width: 700px;
+    }
+  }
+}
+.slider-container {
+  position: relative;
+  .arrow-next,
+  .arrow-prev {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 60px;
+  }
+  .arrow-next {
+    right: calc($scroll-padding - 30px);
+  }
+  .arrow-prev {
+    left: calc($scroll-padding - 30px);
+  }
+  .slider {
+    display: flex;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    height: 100%;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 1px; // for descenders of letters getting cut off
+    padding-right: $scroll-padding;
+    gap: $gap-medium;
+    &.visible-cards-1 .slide {
+      width: calc(100% - 20px);
+    }
+    &.visible-cards-2 .slide {
+      width: calc(50% - 20px);
+    }
+    &.visible-cards-3 .slide {
+      width: calc(33.33% - 20px);
+    }
+    &.visible-cards-4 .slide {
+      width: calc(25% - 20px);
+    }
+  }
+  .slide {
+    scroll-snap-align: start; // Snap to the start of each slide
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    .image {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 600px;
+      img,
+      video {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .text {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      flex-wrap: nowrap;
+      .inner {
+        display: flex;
+        gap: 30px;
+      }
+      .name {
+        color: $black;
+      }
+      .position {
+        color: $black;
+      }
+    }
+    &.card {
+      .image {
+        height: 350px;
+        border-radius: $box-radius $box-radius 0 0;
+      }
+      .text {
+        padding: $padding-medium;
+        border: 1.75px solid $grey;
+        border-radius: 0 0 $box-radius $box-radius;
+      }
+    }
+    &.border {
+      .text {
+        justify-content: flex-end;
+        min-height: 250px;
+        border-radius: $box-radius !important;
+      }
+    }
+    &.image {
+      .image {
+        border-radius: $box-radius;
+      }
+    }
+    &.single {
+      width: 100% !important;
+    }
+  }
+}
+
+@include respond-to-max(1700px) {
+  .slider-header,
+  .slider,
+  .project-overview:first-of-type {
+    padding-left: $scroll-padding-medium;
+    scroll-padding-left: $scroll-padding-medium;
+  }
+  .slider-container {
+    .slider {
+      padding-right: $scroll-padding-medium !important;
+    }
+    .arrow-next {
+      right: 45px;
+    }
+    .arrow-prev {
+      left: 45px;
+    }
+  }
+}
+
+@include respond-to-max($desktop-xlarge) {
+  .slider-header,
+  .slider,
+  .project-overview,
+  .project-overview:first-of-type {
+    padding-left: $scroll-padding-small;
+    scroll-padding-left: $scroll-padding-small;
+  }
+  .slider-container {
+    .slider {
+      padding-right: $scroll-padding-small !important;
+    }
+  }
+  .slider-container {
+    .arrow-next {
+      right: 30px;
+    }
+    .arrow-prev {
+      left: 30px;
+    }
+  }
+}
+
+@include respond-to-max(1300px) {
+  .slider-container .slider {
+    &.visible-cards-3 .slide {
+      width: 50%;
+      max-width: unset;
+    }
+  }
+  .slider-container .slider.accordion {
+    &.visible-cards-3 {
+      .accordion-slide:nth-child(2n + 1) .image {
+        border-radius: $box-radius 0 0 $box-radius;
+      }
+      .accordion-slide:nth-child(2n) .image {
+        border-radius: 0 $box-radius $box-radius 0;
+      }
+      .accordion-slide:last-child:nth-child(odd) .image {
+        border-radius: $box-radius;
+      }
+    }
+  }
+  .slider-container .slider .slide.press {
+    .text.break {
+      align-items: center;
+      .name {
+        max-width: unset;
+      }
+      .btn {
+        top: unset;
+      }
+    }
+  }
+}
+
+@include respond-to-max($desktop-large) {
+  .slider-container .slide.project .project-info h3:last-of-type {
+    display: none;
+  }
+  .slider-container .slider.accordion .accordion-slide .slide-out .inner {
+    padding: 50px;
+    .inner-header h2 {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+@include respond-to-max($desktop) {
+  .slider-container {
+    .arrow-next,
+    .arrow-prev {
+      height: 50px;
+    }
+    .slide:not(.project-slide) {
+      min-width: 80% !important;
+    }
+  }
+}
+
+@include respond-to-max($tablet) {
+  .slider-container {
+    .slide:not(.project-slide) {
+      min-width: 100% !important;
+    }
+    .slide {
+      gap: 15px;
+    }
+  }
+}
+
+@include respond-to-max($mobile) {
+  .slider-header,
+  .slider,
+  .project-overview,
+  .project-overview:first-of-type {
+    padding-left: $scroll-padding-xsmall;
+    scroll-padding-left: $scroll-padding-xsmall;
+  }
+  .slider-container {
+    .arrow-next,
+    .arrow-prev {
+      display: none !important;
+    }
+    .slider {
+      padding-right: $scroll-padding-xsmall !important;
+    }
+  }
+}

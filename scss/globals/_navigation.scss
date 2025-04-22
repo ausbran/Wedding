@@ -1,0 +1,48 @@
+nav,
+.spacer {
+  width: 100vw;
+  height: $navHeight;
+  background: $orange;
+}
+nav {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  @include flex-center;
+  .logo {
+    line-height: unset;
+    position: relative;
+    bottom: -6px;
+  }
+  .menu {
+    padding: 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    max-width: 1500px;
+    width: 100%;
+  }
+  .primary-links {
+    @include flex-center;
+    gap: $gap-large;
+  }
+  .link {
+    cursor: pointer;
+    color: $black;
+    text-decoration: none;
+    font-size: 0.75rem;
+  }
+  .link,
+  .logo {
+    cursor: pointer;
+    transition: $transition;
+  }
+  .link:hover,
+  .logo:hover {
+    opacity: 0.5;
+  }
+}

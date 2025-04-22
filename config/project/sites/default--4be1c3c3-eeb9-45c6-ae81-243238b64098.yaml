@@ -1,0 +1,9 @@
+baseUrl: $PRIMARY_SITE_URL
+enabled: true
+handle: default
+hasUrls: true
+language: en-US
+name: Wedding
+primary: true
+siteGroup: 05cbf344-f66f-4b8c-9297-8b2b3bb33dab # Wedding
+sortOrder: 1

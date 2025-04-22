@@ -1,0 +1,90 @@
+{% extends "_layouts/base" %}
+
+{% block page %}
+
+	{% set slides = [] %}
+	{% set content = craft.entries.section('schedule').type('pnwFunDay').one() %}
+
+	{% if content %}
+		{% for block in content.pnwFunDayActivities.all() %}
+			{% set slides = slides|merge([block]) %}
+		{% endfor %}
+	{% endif %}
+
+	{% include '_includes/_blocks/slider' with { 
+        slides: slides,
+        slideHeader: content.title,
+        slideBody: content.description,
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slideCard' 
+    } %}
+
+
+	{% set slides = [] %}
+	{% set content = craft.entries.section('schedule').type('welcomeBeachParty').one() %}
+
+	{% if content and content.asset.exists() %}
+		{% set slides = content.asset.all() %}
+		{% set totalSlides = slides|length %}
+	{% endif %}
+
+	{% include '_includes/_blocks/slider' with { 
+        slides: slides,
+        slideHeader: content.title,
+        slideBody: content.description,
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slideImage' 
+    } %}
+
+	{# Second Slider: Images from 'welcomeBeachParty' #}
+	{% set slides = [] %}
+	{% set content = craft.entries.section('schedule').type('weddingDay').one() %}
+
+	{% if content and content.asset.exists() %}
+		{% set slides = content.asset.all() %}
+		{% set totalSlides = slides|length %}
+	{% endif %}
+
+	{% include '_includes/_blocks/slider' with { 
+        slides: slides,
+        slideHeader: content.title,
+        slideBody: content.description,
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slideImage' 
+    } %}
+
+	{% set slides = [] %}
+	{% set content = craft.entries.section('schedule').type('afterParty').one() %}
+
+	{% if content and content.asset.exists() %}
+		{% set slides = content.asset.all() %}
+		{% set totalSlides = slides|length %}
+	{% endif %}
+
+	{% include '_includes/_blocks/slider' with { 
+        slides: slides,
+        slideHeader: content ? content.title : 'After Party',
+        slideBody: content ? content.description : '',
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slideImage' 
+    } %}
+
+	{# Second Slider: Images from 'welcomeBeachParty' #}
+	{% set slides = [] %}
+	{% set content = craft.entries.section('schedule').type('hangoverBrunch').one() %}
+
+	{% if content and content.asset.exists() %}
+		{% set slides = content.asset.all() %}
+		{% set totalSlides = slides|length %}
+	{% endif %}
+
+	{% include '_includes/_blocks/slider' with { 
+        slides: slides,
+        slideHeader: content.title,
+        slideBody: content.description,
+        fadeIn: true,
+        slideTemplate: '_includes/_blocks/slideImage' 
+    } %}
+
+
+{% endblock %}
